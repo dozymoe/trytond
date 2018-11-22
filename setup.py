@@ -110,6 +110,7 @@ setup(name=name,
         'werkzeug',
         'wrapt',
         'passlib',
+        'wsgicors',
         ],
     extras_require={
         'PostgreSQL': pg_require,

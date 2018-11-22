@@ -25,6 +25,10 @@ from trytond.wsgi import app
 from trytond.pool import Pool
 from trytond.modules import get_module_list, get_module_info
 
+from wsgicors import CORS
+app.wsgi_app = CORS(app.wsgi_app, headers='*', methods='*', maxage='180',
+        origin='*')
+
 with commandline.pidfile(options):
     Pool.start()
     for name in options.database_names:
